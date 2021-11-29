@@ -26,20 +26,12 @@ if(isset($_POST["calcular"])){
 <body>
     
     <form action="" method="POST">
-        <select name="opcion">
-            <option value="pentagono">Pentagono</option>
-            <option value="rectangulo">Rectangulo</option>
-            <option value="circulo">Circulo</option>
-            <option value="triangulo">Triangulo</option>
-        </select>
-
+        
         <input type="submit" value="Seleccionar" name="seleccionar">
     </form>
 
     <form action="" method="POST">
         <label></label>
-
-
     <form>
 
 </body>
