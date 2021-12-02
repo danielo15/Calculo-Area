@@ -3,6 +3,7 @@
 $area;
 $perimetro;
 $mensaje;
+
 if(isset($_POST["calcular"])){
 
     switch($_POST["opcion"]){
@@ -27,7 +28,8 @@ if(isset($_POST["calcular"])){
     
     <form action="" method="POST">
         
-        <input type="submit" value="Seleccionar" name="seleccionar">
+        <label><input type="text" name="" id=""></label>
+        <input type="submit" value="Calcular" name="calcular">
     </form>
 
     <form action="" method="POST">
