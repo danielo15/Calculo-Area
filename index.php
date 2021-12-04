@@ -1,14 +1,21 @@
 <?php
+include 'pentagono.php';
+include 'rectangulo.php'
 
-$area;
-$perimetro;
+
 $mensaje;
-if(isset($_POST["calcular"])){
+$respuestaPerimetro;
+$respuestaArea;
+if(isset($_POST["seleccionar"])){
 
-    switch($_POST["opcion"]){
-        case "pentagono":
-            calcularArea();
-            calcularPerimetro();
+    switch($_POST["figura"]){
+        case "Pentagono":
+            $respuestaArea = areaPentagono($_POST["base"], $_POST["apotema"]);
+            $respuestaPerimetro = perimetroPentagono($_POST["base"]);
+            break;
+        case "Rectangulo":
+            $respuestaArea = areaPentagono($_POST["base"], $_POST["altura"]);
+            $respuestaPerimetro = perimetroPentagono($_POST["base"], $_POST["altura"]);
     }
 }
 
@@ -26,21 +33,18 @@ if(isset($_POST["calcular"])){
 <body>
     
     <form action="" method="POST">
-        <select name="opcion">
-            <option value="pentagono">Pentagono</option>
-            <option value="rectangulo">Rectangulo</option>
-            <option value="circulo">Circulo</option>
-            <option value="triangulo">Triangulo</option>
-        </select>
-
+        <label><input type="text" name="figura" value="Rectangulo"></label>
+        <label>Base: <input type="number" name="base"></label>
+        <label>Altura: <input type="number" name="altura"></label>
         <input type="submit" value="Seleccionar" name="seleccionar">
     </form>
 
     <form action="" method="POST">
-        <label></label>
-
-
-    <form>
+        <label><input type="text" name="figura" value = "Pentagono"></label>
+        <label>Base: <input type="number" name="base"></label>
+        <label>Apotema: <input type="number" name="apotema"></label>
+        <input type="submit" value="Seleccionar" name="seleccionar">
+    </form>
 
 </body>
 </html>
