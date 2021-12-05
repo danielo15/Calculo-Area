@@ -34,6 +34,17 @@ if(isset($_POST['triangulo'])){
 
 }
 
+if(isset($_POST['circulo'])) {
+
+    if(isset($_POST['radio'])) {
+        $radio = floatval($_POST['radio']);
+    }
+
+    $areaCirculo = $circulo->calcularArea($radio);
+    $perimetroCirculo = $circulo->calcularPerimetro($radio);
+
+}
+
 ?>
 
 <!DOCTYPE html>
