@@ -2,13 +2,14 @@
 
 class triangulo 
 {
-    static function calcularArea($base, $altura)
+    function calcularArea($base, $altura)
     {
         return ($base * $altura) / 2;
     }
 
-    static function calcularPerimetro($lado)
+    function calcularPerimetro($lado)
     {
         return 3 * $lado;
     }
 }
+

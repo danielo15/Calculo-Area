@@ -1,18 +1,37 @@
 
 <?php
 //Inicio codificación: JJB - 05/12/2021
-include './clases/triangulo.php';
-include './clases/circulo.php';
+require './clases/triangulo.php';
+require './clases/circulo.php';
+
+//Funciones:
+
 
 //VARIABLES:
+
 $triangulo = new triangulo();
 $circulo = new circulo();
 $base = 0;
 $altura = 0;
 $radio = 0;
+$areaTriangulo = 0;
+$areaCirculo = 0;
+$perimetroTriangulo = 0;
+$perimetroCirculo = 0;
 
 if(isset($_POST['triangulo'])){
     
+    if(isset($_POST['base'])) {
+        $base = intval($_POST['base']);
+    }
+
+    if(isset($_POST['altura'])) {
+        $altura = intval($_POST['altura']);
+    }
+
+    $areaTriangulo = $triangulo->calcularArea($base,$altura);
+    $perimetroTriangulo = $triangulo->calcularPerimetro($base);
+
 }
 
 ?>
@@ -36,8 +55,8 @@ if(isset($_POST['triangulo'])){
         
     </form>
 
-    <p>Area triangulo:</p>
-    <p>Perimetro triangulo:</p>
+    <p>Area triangulo: <?=$areaTriangulo?></p>
+    <p>Perimetro triangulo: <?=$perimetroTriangulo?></p>
 
     <br>
 
@@ -49,8 +68,8 @@ if(isset($_POST['triangulo'])){
         
     </form>
 
-    <p>Area circulo:</p>
-    <p>Perimetro circulo:</p>
+    <p>Area circulo: <?=$areaCirculo?></p>
+    <p>Perimetro circulo: <?=$perimetroCirculo?></p>
 
 </body>
 </html>
