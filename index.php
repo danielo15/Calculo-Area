@@ -1,7 +1,19 @@
 
 <?php
 //Inicio codificación: JJB - 05/12/2021
+include './clases/triangulo.php';
+include './clases/circulo.php';
 
+//VARIABLES:
+$triangulo = new triangulo();
+$circulo = new circulo();
+$base = 0;
+$altura = 0;
+$radio = 0;
+
+if(isset($_POST['triangulo'])){
+    
+}
 
 ?>
 
@@ -24,6 +36,9 @@
         
     </form>
 
+    <p>Area triangulo:</p>
+    <p>Perimetro triangulo:</p>
+
     <br>
 
     <form action="" method="post">
@@ -33,6 +48,9 @@
         <input type="submit" name="circulo">
         
     </form>
+
+    <p>Area circulo:</p>
+    <p>Perimetro circulo:</p>
 
 </body>
 </html>
