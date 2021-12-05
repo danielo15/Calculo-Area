@@ -57,6 +57,5 @@ if(isset($_POST["seleccionar"])){
             echo "El perimetro es: ".$respuestaPerimetro." cm";
         }
     ?>
-
 </body>
 </html>
