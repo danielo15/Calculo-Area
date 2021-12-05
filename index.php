@@ -1,6 +1,6 @@
 <?php
-include 'pentagono.php';
-include 'rectangulo.php'
+include 'clases/rectangulo.php';
+include 'clases/pentagono.php';
 
 
 $respuestaPerimetro;
@@ -13,8 +13,8 @@ if(isset($_POST["seleccionar"])){
             $respuestaPerimetro = perimetroPentagono($_POST["base"]);
             break;
         case "Rectangulo":
-            $respuestaArea = areaPentagono($_POST["base"], $_POST["altura"]);
-            $respuestaPerimetro = perimetroPentagono($_POST["base"], $_POST["altura"]);
+            $respuestaArea = areaRectangulo($_POST["base"], $_POST["altura"]);
+            $respuestaPerimetro = perimetroRectangulo($_POST["base"], $_POST["altura"]);
             break;
     }
 }
@@ -47,6 +47,16 @@ if(isset($_POST["seleccionar"])){
         <label>Apotema: <input type="number" name="apotema"></label>
         <input type="submit" value="Seleccionar" name="seleccionar">
     </form>
+
+
+
+    <?php
+        if(isset($_POST["seleccionar"])){
+            echo "El area es: ".$respuestaArea." cm2";
+            echo "<br>";
+            echo "El perimetro es: ".$respuestaPerimetro." cm";
+        }
+    ?>
 
 </body>
 </html>
