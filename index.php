@@ -42,11 +42,11 @@ if(isset($_POST['triangulo'])){
 if(isset($_POST['circulo'])) {
 
     if(isset($_POST['radio'])) {
-        $radio = floatval($_POST['radio']);
+        $radio = intval($_POST['radio']);
     }
 
-    $areaCirculo = $circulo->calcularArea($radio);
-    $perimetroCirculo = $circulo->calcularPerimetro($radio);
+    $areaCirculo = number_format($circulo->calcularArea($radio), 2);
+    $perimetroCirculo = number_format($circulo->calcularPerimetro($radio), 2);
 
 }
 
