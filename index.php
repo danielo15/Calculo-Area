@@ -3,7 +3,6 @@ include 'pentagono.php';
 include 'rectangulo.php'
 
 
-$mensaje;
 $respuestaPerimetro;
 $respuestaArea;
 if(isset($_POST["seleccionar"])){
@@ -16,11 +15,12 @@ if(isset($_POST["seleccionar"])){
         case "Rectangulo":
             $respuestaArea = areaPentagono($_POST["base"], $_POST["altura"]);
             $respuestaPerimetro = perimetroPentagono($_POST["base"], $_POST["altura"]);
+            break;
     }
 }
 
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,14 +33,16 @@ if(isset($_POST["seleccionar"])){
 <body>
     
     <form action="" method="POST">
-        <label><input type="text" name="figura" value="Rectangulo"></label>
+        Rectangulo:
+        <input type="hidden" name="figura" value="Rectangulo">
         <label>Base: <input type="number" name="base"></label>
         <label>Altura: <input type="number" name="altura"></label>
         <input type="submit" value="Seleccionar" name="seleccionar">
     </form>
 
     <form action="" method="POST">
-        <label><input type="text" name="figura" value = "Pentagono"></label>
+        Pentagono:
+        <input type="hidden" name="figura" value = "Pentagono">
         <label>Base: <input type="number" name="base"></label>
         <label>Apotema: <input type="number" name="apotema"></label>
         <input type="submit" value="Seleccionar" name="seleccionar">
