@@ -1,23 +1,24 @@
 <?php
-
+/*Inicio codificación: JJB - 16/12/2021*/
+/*Fin de codificación: JJB - 16/12/2021*/
 class circulo
 {
 
-    static function calcularArea($radio)
+    function calcularArea($radio)
     {
         return pi() * ($radio*$radio);
     }
 
-    static function calcularPerimetro($radio)
+    function calcularPerimetro($radio)
     {
         return 2 * pi() * $radio;
     }
 
-    static function calcularVolumenCilindro($altura,$radio) {
+    function calcularVolumenCilindro($altura,$radio) {
         return ($this->calcularArea($radio) * $altura);
     }
 
-    static function calcularAreaCilindro($altura, $radio) {
+    function calcularAreaCilindro($altura, $radio) {
         return (2 * $this->calcularArea($radio)) + (2 * pi() * $radio * $altura);
     }
 
