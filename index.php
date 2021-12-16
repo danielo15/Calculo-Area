@@ -1,11 +1,13 @@
 
 <?php
-/*Inicio codificación: JJB - 05/12/2021*/
-/*Fin de codificación: JJB - 05/12/2021*/
+//Inicio codificacion 16/12/2021 Daniel
+//Fin codificacion 16/12/2021 Daniel
 require './clases/triangulo.php';
 require './clases/circulo.php';
 include 'clases/rectangulo.php';
 include 'clases/pentagono.php';
+include 'clases/rectangular.php';
+include 'clases/pentagonal.php';
 
 //Funciones:
 
@@ -65,6 +67,24 @@ if(isset($_POST["seleccionar"])){
     }
 }
 
+
+if(isset($_POST["selVolumen"])){
+
+    switch($_POST["prisma"]){
+        
+        case "Pentagonal":
+            $respuestaArea = areaPentagonal($_POST["base"], $_POST["apotema"], $_POST["altura"]);
+            $respuestaVolumen = volumenPentagonal($_POST["base"], $_POST["apotema"], $_POST["altura"]);
+            break;
+
+        case "Rectangular":
+            $respuestaArea = areaRectangular($_POST["base"], $_POST["profundidad"], $_POST["altura"]);
+            $respuestaVolumen = volumenRectangular($_POST["base"], $_POST["profundidad"], $_POST["altura"]);
+            break; 
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -119,6 +139,23 @@ if(isset($_POST["seleccionar"])){
         <input type="submit" value="Seleccionar" name="seleccionar">
     </form>
 
+    <form action="" method="POST">
+        Prisma pentagonal:
+        <input type="hidden" name="prisma" value = "Pentagonal">
+        <label>Base: <input type="number" name="base"></label>
+        <label>Apotema: <input type="number" name="apotema"></label>
+        <label>Altura: <input type="number" name="altura"></label>
+        <input type="submit" name="selVolumen" value="seleccionar">
+    </form>
+
+    <form action="" method="POST">
+        Prisma rectangular:
+        <input type="hidden" name="prisma" value = "Rectangular">
+        <label>Base: <input type="number" name="base"></label>
+        <label>Profundidad: <input type="number" name="profundidad"></label>
+        <label>Altura: <input type="number" name="altura"></label>
+        <input type="submit" name="selVolumen" value="seleccionar">
+    </form>
 
 
     <?php
@@ -128,6 +165,17 @@ if(isset($_POST["seleccionar"])){
             echo "El perimetro es: ".$respuestaPerimetro." cm";
         }
     ?>
+
+    <?php
+        if(isset($_POST["selVolumen"])){
+            echo "El area es: ".$respuestaArea." cm2";
+            echo "<br>";
+            echo "El perimetro es: ".$respuestaVolumen." cm3";
+        }
+    ?>
+
+
+    
 </body>
 </html>
 
