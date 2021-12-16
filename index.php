@@ -1,7 +1,7 @@
 
 <?php
-/*Inicio codificación: JJB - 05/12/2021*/
-/*Fin de codificación: JJB - 05/12/2021*/
+/*Inicio codificación: JJB - 16/12/2021*/
+/*Fin de codificación: JJB - 16/12/2021*/
 require './clases/triangulo.php';
 require './clases/circulo.php';
 include 'clases/rectangulo.php';

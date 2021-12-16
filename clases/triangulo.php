@@ -2,14 +2,21 @@
 
 class triangulo 
 {
-    function calcularArea($base, $altura)
+    static function calcularArea($base)
     {
-        return ($base * $altura) / 2;
+        return (sqrt(3) / 4) * ($base * $base);
     }
 
-    function calcularPerimetro($lado)
-    {
+    static function calcularPerimetro($lado) {
         return 3 * $lado;
+    }
+
+    static function calcularVolumenPrisma($altura,$base) {
+        return $this->calcularArea($base) * $altura;
+    }
+
+    static function calcularAreaPrisma($altura,$base) {
+        return (2 * $this->calcularArea($base)) + (3 * ($altura * $base));
     }
 }
 
