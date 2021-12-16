@@ -1,7 +1,12 @@
 
 <?php
+
+/*Inicio codificación: JJB - 16/12/2021*/
+/*Fin de codificación: JJB - 16/12/2021*/
+
 //Inicio codificacion 16/12/2021 Daniel
 //Fin codificacion 16/12/2021 Daniel
+
 require './clases/triangulo.php';
 require './clases/circulo.php';
 include 'clases/rectangulo.php';
@@ -25,6 +30,13 @@ $perimetroTriangulo = 0;
 $perimetroCirculo = 0;
 $respuestaPerimetro;
 $respuestaArea;
+$volumenTriangulo = 0;
+$areaPrisma = 0;
+$volumenCilindro = 0;
+$areaCilindro = 0;
+$volumenTriangulo = 0;
+$areaPrisma = 0;
+
 
 if(isset($_POST['triangulo'])){
     
@@ -36,8 +48,10 @@ if(isset($_POST['triangulo'])){
         $altura = intval($_POST['altura']);
     }
 
-    $areaTriangulo = $triangulo->calcularArea($base,$altura);
-    $perimetroTriangulo = $triangulo->calcularPerimetro($base);
+    $areaTriangulo = number_format($triangulo->calcularArea($base), 2);
+    $perimetroTriangulo = number_format($triangulo->calcularPerimetro($base), 2);
+    $volumenTriangulo = number_format($triangulo->calcularVolumenPrisma($altura,$base), 2);
+    $areaPrisma = number_format($triangulo->calcularAreaPrisma($altura,$base), 2);
 
 }
 
@@ -47,8 +61,14 @@ if(isset($_POST['circulo'])) {
         $radio = intval($_POST['radio']);
     }
 
+    if(isset($_POST['altura'])) {
+        $altura = intval($_POST['altura']);
+    }
+
     $areaCirculo = number_format($circulo->calcularArea($radio), 2);
     $perimetroCirculo = number_format($circulo->calcularPerimetro($radio), 2);
+    $volumenCilindro = number_format($circulo->calcularVolumenCilindro($altura,$radio), 2);
+    $areaCilindro = number_format($circulo->calcularAreaCilindro($altura, $radio), 2);
 
 }
 
@@ -102,12 +122,14 @@ if(isset($_POST["selVolumen"])){
         <label>Triangulo</label>
         <input type="number" name="base" placeholder="base">
         <input type="number" name="altura" placeholder="altura">
-        <input type="submit" name="triangulo">
+        <input type="submit" name="triangulo" value="Calcular">
         
     </form>
 
-    <p>Area triangulo: <?=$areaTriangulo?></p>
-    <p>Perimetro triangulo: <?=$perimetroTriangulo?></p>
+    <p>Area triangulo: <?=$areaTriangulo?> cm2</p>
+    <p>Perimetro triangulo: <?=$perimetroTriangulo?>cm</p>
+    <p>Volumen del prisma: <?=$volumenTriangulo?>cm3</p>
+    <p>Area del prisma: <?=$areaPrisma?>cm2</p>
 
     <br>
 
@@ -115,12 +137,15 @@ if(isset($_POST["selVolumen"])){
 
         <label>Circulo</label>
         <input type="number" name="radio" placeholder="radio">
-        <input type="submit" name="circulo">
+        <input type="number" name="altura" placeholder="altura">
+        <input type="submit" name="circulo" value="Calcular">
         
     </form>
 
-    <p>Area circulo: <?=$areaCirculo?></p>
-    <p>Perimetro circulo: <?=$perimetroCirculo?></p>
+    <p>Area circulo: <?=$areaCirculo?>cm2</p>
+    <p>Perimetro circulo: <?=$perimetroCirculo?>cm</p>
+    <p>Volumen cilindro: <?=$volumenCilindro?>cm3</p>
+    <p>Area cilindro: <?=$areaCilindro?>cm2</p>
 
     
     <form action="" method="POST">
