@@ -119,9 +119,9 @@ if(isset($_POST["selVolumen"])){
 
     <form action="" method="post">
 
-        <label>Triangulo</label>
-        <input type="number" name="base" placeholder="base">
-        <input type="number" name="altura" placeholder="altura">
+        <label>Triangulo Equilatero:</label>
+        <input type="number" name="base" placeholder="base del triangulo">
+        <input type="number" name="altura" placeholder="altura del prisma">
         <input type="submit" name="triangulo" value="Calcular">
         
     </form>
